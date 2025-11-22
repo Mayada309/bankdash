@@ -5,7 +5,7 @@ import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YA
 
 export function BalanceHistory() {
   return (
-    <div className="h-[276px] rounded-[25px] bg-white p-6 shadow-sm">
+    <div className="h-[276px] rounded-[25px] bg-white p-6">
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           data={balanceHistoryData}

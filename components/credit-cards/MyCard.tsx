@@ -1,6 +1,5 @@
 import { CreditCard } from '@/data/creditcards';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import { ChipCard } from '../global/icons';
 
 interface MyCardProps {

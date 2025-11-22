@@ -5,25 +5,23 @@ import { cn } from '@/lib/utils';
 import { ChevronRight, Send } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
+import { Input } from '../ui/input';
+import { Button } from '../ui/button';
 
 export function QuickTransfer() {
-  const [amount, setAmount] = useState('525.50');
+  const [amount, setAmount] = useState('');
 
   return (
-    <div className="flex h-[276px] flex-col justify-between rounded-[25px] bg-white p-8 shadow-sm">
-      <div className="flex items-center gap-8 overflow-x-auto pb-4">
+    <div className="flex h-[276px] flex-col justify-between rounded-[25px] bg-white p-4 hide-scrollbar">
+      <div className="flex items-center gap-4 overflow-x-auto hide-scrollbar pb-4">
         {quickTransferUsers.map((user, index) => (
-          <div key={user.id} className="flex min-w-[80px] flex-col items-center gap-3 text-center">
+          <div key={user.id} className="flex min-w-[80px] flex-col items-center justify-between text-center h-full">
             <div className="relative h-[70px] w-[70px] overflow-hidden rounded-full">
               <Image
                 src={user.image}
                 alt={user.name}
                 fill
                 className="object-cover"
-                onError={(e) => {
-                  // @ts-ignore
-                  e.target.src = `https://ui-avatars.com/api/?name=${user.name}&background=random`;
-                }}
               />
             </div>
             <div className="flex flex-col">
@@ -36,24 +34,25 @@ export function QuickTransfer() {
             </div>
           </div>
         ))}
-        <button className="flex h-[50px] w-[50px] flex-shrink-0 items-center justify-center rounded-full bg-white shadow-md hover:bg-gray-50">
+        <Button size={'icon'} className="flex h-[50px] w-[50px] flex-shrink-0 items-center justify-center rounded-full bg-white shadow-md hover:bg-gray-50">
           <ChevronRight className="h-6 w-6 text-[#718EBF]" />
-        </button>
+        </Button>
       </div>
 
-      <div className="flex items-center justify-between gap-4">
-        <span className="text-[15px] text-[#718EBF]">Write Amount</span>
-        <div className="relative flex max-w-[265px] flex-1 items-center rounded-[50px] bg-[#EDF1F7]">
-          <input
+      <div className="flex flex-col items-start justify-between gap-4">
+        <span className="text-xs text-[#718EBF]">Write Amount</span>
+        <div className="relative w-full flex max-w-[265px] flex-1 items-center rounded-full bg-[#EDF1F7]">
+          <Input
             type="text"
             value={amount}
+            placeholder='525.50'
             onChange={(e) => setAmount(e.target.value)}
-            className="w-full bg-transparent px-6 py-3.5 text-[#718EBF] outline-none"
+            className="w-full rounded-full px-3 py-2 text-[#718EBF] border-none"
           />
-          <button className="absolute right-0 flex h-full items-center gap-2 rounded-[50px] bg-[#1814F3] px-6 text-white transition-colors hover:bg-[#1814F3]/90">
+          <Button  className="absolute right-0 flex h-full items-center gap-2 rounded-full bg-[#1814F3] px-6 text-white transition-colors hover:bg-[#1814F3]/90">
             <span className="text-base font-medium">Send</span>
             <Send className="h-5 w-5 -rotate-45" />
-          </button>
+          </Button>
         </div>
       </div>
     </div>

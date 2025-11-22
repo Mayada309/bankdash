@@ -30,19 +30,19 @@ export function RecentTransactions() {
   };
 
   return (
-    <div className="flex flex-col gap-4 rounded-[25px] bg-white p-6 shadow-sm">
+    <div className="flex flex-col gap-4 rounded-[25px] bg-white p-4">
       {recentTransactions.map((transaction) => (
-        <div key={transaction.id} className="flex items-center justify-between">
+        <div key={transaction.id} className="flex items-center justify-between flex-wrap">
           <div className="flex items-center gap-4">
-            <div className={cn("flex h-[50px] w-[50px] items-center justify-center rounded-full", getBgColor(transaction.icon))}>
+            <div className={cn("flex h-10 w-10 items-center justify-center rounded-full", getBgColor(transaction.icon))}>
               {getIcon(transaction.icon)}
             </div>
             <div className="flex flex-col">
-              <span className="text-base font-medium text-[#232323]">{transaction.title}</span>
-              <span className="text-[15px] text-[#718EBF]">{transaction.date}</span>
+              <span className="text-sm font-medium text-[#232323]">{transaction.title}</span>
+              <span className="text-xs text-[#718EBF]">{transaction.date}</span>
             </div>
           </div>
-          <span className={cn("text-base font-medium", transaction.amount > 0 ? "text-[#41D4A8]" : "text-[#FF4B4A]")}>
+          <span className={cn("md:text-base text-sm font-medium", transaction.amount > 0 ? "text-[#41D4A8]" : "text-[#FF4B4A]")}>
             {transaction.amount > 0 ? '+' : ''}${Math.abs(transaction.amount).toLocaleString()}
           </span>
         </div>

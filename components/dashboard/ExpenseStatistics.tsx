@@ -5,7 +5,7 @@ import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 
 export function ExpenseStatistics() {
   return (
-    <div className="h-[322px] rounded-[25px] bg-white p-6 shadow-sm">
+    <div className="h-[322px] rounded-[25px] bg-white p-4 shadow-sm">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
