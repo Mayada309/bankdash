@@ -5,3 +5,5 @@ function Invesments() {
         </div>
     )
 }
+
+export default Invesments
