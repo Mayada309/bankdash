@@ -34,7 +34,7 @@ export function YearlyInvestmentChart() {
             contentStyle={{ borderRadius: '10px', border: 'none', boxShadow: '0px 4px 14px rgba(0,0,0,0.05)' }}
           />
           <Line 
-            type="monotone" 
+            type="linear" 
             dataKey="value" 
             stroke="#FCAA0B" 
             strokeWidth={3} 
