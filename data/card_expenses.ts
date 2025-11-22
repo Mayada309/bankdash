@@ -2,13 +2,14 @@ export interface CardExpense {
   bank: string;
   value: number;
   color: string;
+  outerRadius?: number;
 }
 
 export const cardExpenses: CardExpense[] = [
-  { bank: 'DBL Bank', value: 30, color: '#1814F3' },
-  { bank: 'BRC Bank', value: 25, color: '#FF82AC' },
-  { bank: 'ABM Bank', value: 20, color: '#16DBCC' },
-  { bank: 'MCP Bank', value: 25, color: '#FFBB38' },
+  { bank: 'ABM Bank', value: 25, color: '#16DBCC', outerRadius: 110 },
+  { bank: 'DBL Bank', value: 25, color: '#1814F3', outerRadius: 100 },
+  { bank: 'MCP Bank', value: 25, color: '#FFBB38', outerRadius: 90 },
+  { bank: 'BRC Bank', value: 25, color: '#FF82AC', outerRadius: 80 },
 ];
 
 export interface CardListItem {

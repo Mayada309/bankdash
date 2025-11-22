@@ -9,7 +9,7 @@ export function AddNewCard() {
   const [expirationDate, setExpirationDate] = useState('25 January 2025');
 
   return (
-    <div className="rounded-[25px] bg-white p-4">
+    <div className="rounded-[25px] bg-white p-4 border-0 shadow-none   ms:max-w-lg md:max-w-2xl  lg:max-w-7xl">
       <p className="mb-6 text-[15px] leading-relaxed text-[#718EBF]">
         Credit Card generally means a plastic card issued by Scheduled Commercial Banks assigned to a Cardholder, with a credit limit, that can be used to purchase goods and services on credit or obtain cash advances.
       </p>

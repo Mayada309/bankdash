@@ -40,7 +40,7 @@ export function CardSettings() {
   ];
 
   return (
-    <div className="rounded-[25px] bg-white p-4">
+    <div className="rounded-[25px] bg-white p-4 border-0 shadow-none  ms:max-w-lg md:max-w-2xl  lg:max-w-7xl ">
       <div className="space-y-2">
         {settings.map((setting) => (
           <div key={setting.id} className="flex items-center gap-4 rounded-xl p-2 hover:bg-gray-50">
