@@ -10,3 +10,14 @@ export function CreditCards() {
 		/>
 	)
 }
+
+export function ChipCard({dark}: {dark?: boolean}) {
+	return (
+		<Image
+			src={dark ? '/icons/chip-card-dark.svg' : '/icons/chip-card.svg'}
+			alt='[ ]'
+			width={34.78}
+			height={34.78}
+		/>
+	)
+}
