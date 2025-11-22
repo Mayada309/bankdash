@@ -2,17 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  User,
-  CreditCard,
-  HandCoins,
-  Wrench,
-  Lightbulb,
-  Settings,
-	Home,
-	Receipt,
-	ChartColumnIncreasing,
-} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CreditCards } from './icons';
 import { sidebarItems	 } from '@/data/sidebar-links';	
@@ -23,7 +12,7 @@ function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="flex h-screen w-64 flex-col border-r bg-white py-8 px-6">
+    <div className="flex h-screen w-64 flex-col border-r bg-white py-8 px-6 overflow-hidden">
       <div className="mb-10 flex items-center gap-2 px-2">
         <CreditCards />
         <span className="text-2xl font-bold text-[#343C6A]">BankDash.</span>
