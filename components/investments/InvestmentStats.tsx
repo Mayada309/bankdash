@@ -19,7 +19,7 @@ export function InvestmentStats() {
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
       {investmentStats.map((stat, index) => (
-        <div key={index} className="flex items-center gap-4 rounded-[25px] bg-white p-6 shadow-sm">
+        <div key={index} className="flex items-center gap-4 rounded-[25px] bg-white p-6">
           <div className={cn("flex h-[70px] w-[70px] items-center justify-center rounded-full", stat.bgColor)}>
             {getIcon(stat.icon)}
           </div>

@@ -19,7 +19,7 @@ export function MyInvestments() {
   return (
     <div className="flex flex-col gap-4">
       {myInvestments.map((investment) => (
-        <div key={investment.id} className="rounded-[25px] bg-white ps-5 py-5 shadow-sm">
+        <div key={investment.id} className="rounded-[25px] bg-white ps-5 py-5">
           <table className="w-full">
             <tbody>
               <tr>

@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 export function TrendingStocks() {
   return (
-    <div className="rounded-[25px] bg-white p-6 shadow-sm">
+    <div className="rounded-[25px] bg-white p-6">
       <table className="w-full">
         <thead>
           <tr className="border-b border-[#F3F3F5]">
