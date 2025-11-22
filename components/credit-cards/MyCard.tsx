@@ -13,7 +13,7 @@ export function MyCard({ card }: MyCardProps) {
   return (
     <div
       className={cn(
-        'relative flex h-[235px] w-[350px] flex-col justify-between rounded-[25px] p-6 text-white shadow-lg',
+        'relative flex h-[235px] w-87.5 min-w-57 flex-col justify-between rounded-[25px] p-4 text-white shadow-lg',
         isBlue
           ? 'bg-gradient-to-r from-[#4C49ED] to-[#0A06F4]'
           : 'border border-gray-100 bg-white text-slate-900'
