@@ -6,17 +6,11 @@ import { RecentTransactions } from '@/components/dashboard/RecentTransactions';
 import { WeeklyActivity } from '@/components/dashboard/WeeklyActivity';
 import { creditCards } from '@/data/creditcards';
 import Link from 'next/link';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-6 p-4 bg-gray-50 ">
+    <div className="flex flex-col gap-6">
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
         <div className="flex flex-col gap-4 xl:col-span-2">
 
@@ -26,22 +20,13 @@ export default function Home() {
               See All
             </Link>
           </div>
-
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {creditCards.map((card) => (
-                <CarouselItem key={card.id} className="pl-2 md:pl-4 md:basis-1/2">
+          <div className="flex items-center gap-3 overflow-x-auto hide-scrollbar pb-2">
+                {creditCards.map((card) => (
+                <div key={card.id} className="pl-2 md:pl-4 md:basis-1/2">
                   <MyCard card={card} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+                </div>
+                 ))}
+          </div>
         </div>
 
         <div className="flex flex-col gap-4 xl:col-span-1">
