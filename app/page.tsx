@@ -6,6 +6,13 @@ import { RecentTransactions } from '@/components/dashboard/RecentTransactions';
 import { WeeklyActivity } from '@/components/dashboard/WeeklyActivity';
 import { creditCards } from '@/data/creditcards';
 import Link from 'next/link';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Home() {
   return (
@@ -20,10 +27,23 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="flex flex-wrap gap-6 overflow-x-auto pb-4 scrollbar-hide">
-            <MyCard card={creditCards[0]} />
-            <MyCard card={creditCards[1]} />
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {creditCards.map((card) => (
+                <CarouselItem key={card.id} className="pl-2 md:pl-4 md:basis-1/2">
+                  <MyCard card={card} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
         </div>
 
         <div className="flex flex-col gap-4 xl:col-span-1">
